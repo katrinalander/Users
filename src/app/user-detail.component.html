@@ -1,44 +1,46 @@
 <div *ngIf="user" class="container-fluid">
   <h2>#{{user.id+' '+user.fname+' '+user.lname}} details: </h2>
-  <div class="row">
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <label>Full Name: </label>
+  <div class="details">
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <label>Full Name: </label>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <input [(ngModel)]="user.fname" placeholder="first name"/>
+        <input [(ngModel)]="user.lname" placeholder="last name"/>
+      </div>
     </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <input [(ngModel)]="user.fname" placeholder="first name"/>
-      <input [(ngModel)]="user.lname" placeholder="last name"/>
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <label>Date of Birth: </label>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <input [(ngModel)]="user.DOB" placeholder="date of birth"/>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <label>Date of Birth: </label>
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <label>Email: </label>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <input [(ngModel)]="user.email" placeholder="email"/>
+      </div>
     </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <input [(ngModel)]="user.DOB" placeholder="date of birth"/>
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <label>Address: </label>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <input [(ngModel)]="user.address" placeholder="address"/>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <label>Email: </label>
-    </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <input [(ngModel)]="user.email" placeholder="email"/>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <label>Address: </label>
-    </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <input [(ngModel)]="user.address" placeholder="address"/>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <label>Phone: </label>
-    </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <input [(ngModel)]="user.phone" placeholder="phone"/>
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <label>Phone: </label>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <input [(ngModel)]="user.phone" placeholder="phone"/>
+      </div>
     </div>
   </div>
   <button class="btn btn-primary" (click)="goBack()">Back</button>

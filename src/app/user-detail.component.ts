@@ -9,7 +9,17 @@ import { User } from './user';
 @Component({
   selector: 'user-detail',
   templateUrl: './user-detail.component.html',
-  // user: User,
+  styles:[`
+    .details {
+      background-color: rgba(238, 238, 238, 1);
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    label {
+      color: #607D8B;
+    }
+  `]
 })
 
 export class UserDetailComponent implements OnInit{

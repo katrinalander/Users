@@ -6,7 +6,7 @@
   margin: 0 2em;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  /*width: 15em;*/
 }
 .users li {
   cursor: pointer;
@@ -45,3 +45,4 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+

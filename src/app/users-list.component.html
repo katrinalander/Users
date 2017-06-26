@@ -16,14 +16,15 @@
       </tr>
       </tbody>
     </table>
+  <hr>
+  <div *ngIf="selectedUser">
+    <h2>
+      {{selectedUser.fname+' '+selectedUser.lname}} was selected
+    </h2>
+    <button class="btn btn-primary" (click)="gotoDetail()">View Details</button>
+  </div>
 </div>
-<hr>
-<div *ngIf="selectedUser">
-  <h2>
-    {{selectedUser.fname+' '+selectedUser.lname}} was selected
-  </h2>
-  <button class="btn btn-primary" (click)="gotoDetail()">View Details</button>
-</div>
+
 <!--<user-detail [user]="selectedUser"></user-detail>-->
 
 
