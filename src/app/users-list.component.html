@@ -1,0 +1,30 @@
+<div class="users">
+  <h2>Users list:</h2>
+    <table class="table table-bordered">
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+      <tbody>
+      <tr *ngFor="let user of users" [class.selected]="user === selectedUser" (click)="onSelect(user)">
+        <td class="">{{user.id}}</td>
+        <td>{{user.fname}}</td>
+        <td>{{user.lname}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+      </tbody>
+    </table>
+</div>
+<hr>
+<div *ngIf="selectedUser">
+  <h2>
+    {{selectedUser.fname+' '+selectedUser.lname}} was selected
+  </h2>
+  <button class="btn btn-primary" (click)="gotoDetail()">View Details</button>
+</div>
+<!--<user-detail [user]="selectedUser"></user-detail>-->
+
+
+
