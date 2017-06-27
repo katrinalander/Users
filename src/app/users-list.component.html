@@ -1,12 +1,19 @@
 <div class="users">
   <h2>Users list:</h2>
-    <table class="table table-bordered">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <table class="table table-bordered">
       <tr>
         <th>ID</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
       </tr>
+        <tr>
+              <td><button type="submit" [disabled]="userForm.pristine">Add User</button></td>
+              <td><input type="text" class="form-control" #fname formControlName="fname" name="fname"/></td>
+              <td><input type="text" class="form-control" #lname formControlName="lname" name="lname"/></td>
+              <td><input type="text" class="form-control" #email formControlName="email" name="email"/></td>
+        </tr>
       <tbody>
       <tr *ngFor="let user of users" [class.selected]="user === selectedUser" (click)="onSelect(user)">
         <td class="">{{user.id}}</td>
@@ -16,6 +23,7 @@
       </tr>
       </tbody>
     </table>
+  </form>
   <hr>
   <div *ngIf="selectedUser">
     <h2>

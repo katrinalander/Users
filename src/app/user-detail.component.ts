@@ -1,9 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit}   from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import {UserService} from "./user.service";
+import { UserService } from "./user.service";
 import { User } from './user';
 
 @Component({
@@ -33,6 +33,11 @@ export class UserDetailComponent implements OnInit{
     this.route.params
       .switchMap((params: Params) => this.userService.getUser(+params['id']))
       .subscribe(user => this.user = user);
+  }
+
+  save(): void {
+    this.userService.update(this.user)
+      .then(() => this.goBack());
   }
 
   goBack(): void{
